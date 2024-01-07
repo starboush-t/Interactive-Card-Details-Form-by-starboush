@@ -116,7 +116,7 @@ form {
 .controlGroup {
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.9rem;
 }
 
 .controlGroup label {
@@ -124,7 +124,7 @@ form {
   font-family: "Space Grotesk", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 
 .controlGroup input {
@@ -151,6 +151,10 @@ form {
 
 #cvc {
   width: 11rem;
+}
+
+.hidden {
+  display: none;
 }
 
 button {
@@ -180,50 +184,4 @@ button {
   margin-top: 0.3rem;
   display: block;
   width: 100%;
-}
-
-#card-date {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  width: 9rem;
-}
-
-#card-month {
-  width: 3.8rem;
-  margin-right: 0.4rem;
-}
-#card-year {
-  width: 3.8rem;
-  margin-right: 0.4rem;
-}
-
-.thank-msg {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 2rem;
-}
-
-.complete-img {
-  width: 5rem;
-}
-
-h1.thank-title {
-  font-size: 2.5rem;
-  padding: 1rem;
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 500;
-}
-p.thanks-msg {
-  font-size: 1.2rem;
-  padding-bottom: 1.5rem;
-  font-family: "Space Grotesk", sans-serif;
-  color: var(--dark-grayish-violet);
-}
-
-.hidden {
-  display: none;
 }
