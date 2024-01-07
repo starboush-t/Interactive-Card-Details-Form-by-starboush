@@ -48,7 +48,7 @@
           </div>
         </div>
       </div>
-      <form id="form">
+      <form id="form" novalidate="novalidate">
         <div class="controlGroup">
           <label for="card-holder">Cardholder Name</label>
           <input
@@ -79,38 +79,31 @@
         <div class="card_information">
           <div id="card-date" class="card-date controlGroup">
             <label for="card-date">Exp.Date (MM/YY)</label>
-            <div class="two-inputs">
-              <div class="controlGroup-error">
-                <input
-                  type="number"
-                  placeholder="MM"
-                  oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                  minlength="2"
-                  maxlength="2"
-                  max="12"
-                  pattern="[0-9]{2}"
-                  id="card-month"
-                  required
-                  onkeyup="return numberValidation(event)"
-                  onkeypress="return formats(this,event)"
-                />
-                <div class="error"></div>
-              </div>
-              <div class="controlGroup-error">
-                <input
-                  type="number"
-                  placeholder="YY"
-                  oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                  minlength="2"
-                  maxlength="2"
-                  id="card-year"
-                  required
-                  onkeyup="return numberValidation(event)"
-                  onkeypress="return formats(this,event)"
-                />
-                <div class="error"></div>
-              </div>
-            </div>
+            <input
+              type="number"
+              placeholder="MM"
+              oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              minlength="2"
+              maxlength="2"
+              max="12"
+              pattern="[0-9]{2}"
+              id="card-month"
+              required
+              onkeyup="return numberValidation(event)"
+              onkeypress="return formats(this,event)"
+            />
+            <input
+              type="number"
+              placeholder="YY"
+              oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+              minlength="2"
+              maxlength="2"
+              id="card-year"
+              required
+              onkeyup="return numberValidation(event)"
+              onkeypress="return formats(this,event)"
+            />
+            <div class="error"></div>
           </div>
           <div class="controlGroup">
             <label for="cvc">CVC</label>
@@ -131,12 +124,49 @@
         <button id="submit-btn" type="submit">Confirm</button>
       </form>
       <div class="thank-msg hidden">
-        <img src="images/icon-complete.svg" alt="Completed" />
-        <h1>Thank You!</h1>
-        <p>We've added your card details.</p>
-        <button>Continue</button>
+        <img
+          src="images/icon-complete.svg"
+          alt="Completed"
+          class="complete-img"
+        />
+        <h1 class="thank-title">Thank You!</h1>
+        <p class="thanks-msg">We've added your card details.</p>
+        <button id="continue-btn">Continue</button>
       </div>
     </main>
   </body>
   <script src="./scripts/main.js"></script>
 </html>
+
+<!-- <div class="two-inputs">
+  <div class="controlGroup-error">
+    <input
+      type="number"
+      placeholder="MM"
+      oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+      minlength="2"
+      maxlength="2"
+      max="12"
+      pattern="[0-9]{2}"
+      id="card-month"
+      required
+      onkeyup="return numberValidation(event)"
+      onkeypress="return formats(this,event)"
+    />
+    <div class="error"></div>
+  </div>
+  <div class="controlGroup-error">
+    <input
+      type="number"
+      placeholder="YY"
+      oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+      minlength="2"
+      maxlength="2"
+      id="card-year"
+      required
+      onkeyup="return numberValidation(event)"
+      onkeypress="return formats(this,event)"
+    />
+    <div class="error"></div>
+  </div>
+</div> -->
