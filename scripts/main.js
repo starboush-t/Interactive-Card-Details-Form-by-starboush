@@ -10,10 +10,19 @@ let cdateMM = document.querySelector(".exp-date-MM");
 let cdateYY = document.querySelector(".exp-date-YY");
 let cvcNumber = document.getElementById("cvc-number");
 let button = document.getElementById("submit-btn");
+let continueBtn = document.getElementById("continue-btn");
+let thank_msg = document.querySelector(".thank-msg");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validateInputs();
+});
+
+continueBtn.addEventListener("click", (e) => {
+  // e.preventDefault();
+  resetValues();
+  form.classList.remove("hidden");
+  thank_msg.classList.add("hidden");
 });
 
 cardHolder.addEventListener("keyup", (e) => {
@@ -96,7 +105,7 @@ const validateInputs = () => {
   }
   if (cardIDValue === "") {
     setError(cardID, "Card ID is required");
-  } else if (cardIDValue.length <= 16) {
+  } else if (cardIDValue.length <= 18) {
     setError(cardID, "CardID must be at least 16 digits");
   } else {
     setSuccess(cardID);
@@ -118,13 +127,36 @@ const validateInputs = () => {
     setSuccess(dateMM);
     setSuccess(dateYY);
   }
+  if (
+    cardHolderValue.length > 10 &&
+    cardIDValue.length == 19 &&
+    dateMMValue.length == 2 &&
+    dateYYValue.length == 2 &&
+    cvcValue.length == 3
+  ) {
+    form.classList.add("hidden");
+    thank_msg.classList.remove("hidden");
+    setSuccess(cardHolder);
+  }
 };
+
+function resetValues() {
+  cardHolder.value = "";
+  cardID.value = "";
+  dateMM.value = "";
+  dateYY.value = "";
+  cvc.value = "";
+  cardNumber.innerHTML = "0000 0000 0000 0000";
+  cardH.innerHTML = "Jane Appleseed";
+  cdateMM.innerHTML = "00";
+  cdateYY.innerHTML = "00";
+  cvcNumber.innerHTML = "000";
+}
 
 function formats(ele, e) {
   if (ele.value.length < 19) {
     ele.value = ele.value.replace(/\W/gi, "").replace(/(.{4})/g, "$1 ");
-    console.log(ele.value);
-    // return true;
+    return true;
   } else {
     return false;
   }
