@@ -226,3 +226,106 @@ p.thanks-msg {
 .hidden {
   display: none;
 }
+
+@media screen and (min-width: 1440px) {
+  body {
+    background-size: 28rem 100%;
+    height: 100vh;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    place-items: center;
+    height: 100vh;
+    max-width: 85%;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 25rem;
+  }
+
+  .back-card {
+    max-width: 25rem;
+    top: 3.5rem;
+    border-radius: 1rem;
+    box-shadow: 9px 9px 30px -1px rgba(0, 0, 0, 0.28);
+    -webkit-box-shadow: 9px 9px 30px -1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 9px 9px 30px -1px rgba(0, 0, 0, 0.28);
+  }
+
+  .back-card .cvc {
+    padding-right: 3.3rem;
+  }
+
+  .front-card {
+    max-width: 25rem;
+    top: 0rem;
+    left: -5.5rem;
+    border-radius: 1rem;
+    box-shadow: 9px 9px 30px -1px rgba(0, 0, 0, 0.28);
+    -webkit-box-shadow: 9px 9px 30px -1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 9px 9px 30px -1px rgba(0, 0, 0, 0.28);
+  }
+
+  .card-number {
+    font-size: 1.75rem;
+  }
+
+  .info {
+    font-size: 0.9rem;
+    padding-right: 0.8rem;
+  }
+
+  .controlGroup {
+    width: 25rem;
+  }
+  .controlGroup label {
+    margin-bottom: 0.8rem;
+  }
+
+  .controlGroup input {
+    padding: 0.8rem;
+  }
+
+  #submit-btn {
+    width: 25rem;
+    margin-top: 0.9rem;
+  }
+
+  #card-date {
+    width: 13rem;
+  }
+
+  #card-month,
+  #card-year {
+    width: 5.8rem;
+  }
+  #cvc {
+    width: 12rem;
+  }
+
+  .controlGroup .error,
+  .controlGroup-error .error {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .complete-img {
+    width: 7rem;
+  }
+
+  h1.thank-title {
+    font-size: 3.5rem;
+  }
+
+  p.thanks-msg {
+    font-size: 1.7rem;
+  }
+
+  #continue-btn {
+    width: 90%;
+  }
+}
